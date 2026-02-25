@@ -31,7 +31,7 @@ end
 
 @inline function discrete!(g::Rectangle, dr::Real, points::AbstractMatrix)::Nothing
     n = num(g, dr)
-    nx, ny = ceil.(Int, (g.x2_ - g.x1_) ./ dr)
+    nx, ny = round.(Int, (g.x2_ - g.x1_) ./ dr)
     dx = (g.x2_[1] - g.x1_[1]) / nx
     dy = (g.x2_[2] - g.x1_[2]) / ny
     vol = dx * dy
